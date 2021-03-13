@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Sun Mar 07 2021 22:23:48 GMT+0530 (India Standard Time)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -10,11 +10,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'sinon'],
 
 
     // list of files / patterns to load in the browser
     files: [
+      'lib/jquery-min.js',
       'lib/underscore-min.js',
       'lib/backbone-min.js',
       'src/**/*.js',

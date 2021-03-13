@@ -3,6 +3,23 @@ var FIXTURES = window.FIXTURES || {};
 
 FIXTURES.recipes = {
 
+    noRestrictionsRecent: {
+        name: 'Marinara',
+        dateAdded: 1521301600000,
+        ingredients: [{
+            baseIngredient: 'pomodoros',
+            quantity: '8',
+            modifier: 'crushed'
+        }, {
+            baseIngredient: 'onion',
+            quantity: '1',
+            modifier: 'chopped'
+        }, {
+            baseIngredient: 'garlic',
+            quantity: '2 clove',
+            modifier: 'miched'
+        }]
+    },
     noRestrictions: {
         name: 'Marinara',
         dateAdded: 1421301600000,
@@ -35,7 +52,8 @@ FIXTURES.recipes = {
         }, {
             baseIngredient: 'nuts',
             quantity: '2 clove',
-            modifier: 'miched'
+            modifier: 'miched',
+            isNut: true,
         }]
     },
 
@@ -45,7 +63,8 @@ FIXTURES.recipes = {
         ingredients: [{
             baseIngredient: 'Eggs',
             quantity: '1',
-            modifier: 'crushed'
+            modifier: 'crushed',
+            isEggs: true
         }, {
             baseIngredient: 'butter',
             quantity: '1',
@@ -63,7 +82,8 @@ FIXTURES.recipes = {
         ingredients: [{
             baseIngredient: 'Chicken',
             quantity: '1',
-            modifier: 'crushed'
+            modifier: 'crushed',
+            isMeat: true
         }, {
             baseIngredient: 'butter',
             quantity: '1',

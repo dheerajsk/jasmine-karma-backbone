@@ -16,15 +16,15 @@ describe("A recipe", function () {
 
     it("should identify if it has nuts", function () {
         const noRestrictions = new app.Models.Recipe(FIXTURES.recipes.noRestrictions);
-        const withNuts = new app.Models.Recipe(FIXTURES.recipe.withNuts);
-
+        const withNuts = new app.Models.Recipe(FIXTURES.recipes.withNuts);
+        
         expect(noRestrictions.containsNuts()).toBe(false);
         expect(withNuts.containsNuts()).toBe(true);
     });
 
     it("should identify if it has eggs", function(){
         const noRestrictions = new app.Models.Recipe(FIXTURES.recipes.noRestrictions);
-        const withEggs = new app.Models.Recipe(FIXTURES.recipe.withEggs);
+        const withEggs = new app.Models.Recipe(FIXTURES.recipes.withEggs);
 
         expect(noRestrictions.containsEggs()).toBe(false);
         expect(withEggs.containsEggs()).toBe(true);
@@ -32,7 +32,7 @@ describe("A recipe", function () {
 
     it("should identify if it is vegeterian", function(){
         const noRestrictions = new app.Models.Recipe(FIXTURES.recipes.noRestrictions);
-        const withMeat = new app.Models.Recipe(FIXTURES.recipe.withMeat);
+        const withMeat = new app.Models.Recipe(FIXTURES.recipes.withMeat);
 
         expect(noRestrictions.containsMeat()).toBe(false);
         expect(withMeat.containsMeat()).toBe(true);

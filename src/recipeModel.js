@@ -20,7 +20,7 @@ app.Models.Recipe = Backbone.Model.extend({
         return this.checkForIngredientType('isEggs');
     },
 
-    isVegeterian: function () {
+    containsMeat: function () {
         return this.checkForIngredientType('isMeat');
     },
 
@@ -30,7 +30,7 @@ app.Models.Recipe = Backbone.Model.extend({
             if (ingredients[i][propertyName]) {
                 return true;
             }
-            return false;
         }
+        return false;
     }
 });
