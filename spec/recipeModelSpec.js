@@ -17,12 +17,12 @@ describe("A recipe", function () {
     it("should identify if it has nuts", function () {
         const noRestrictions = new app.Models.Recipe(FIXTURES.recipes.noRestrictions);
         const withNuts = new app.Models.Recipe(FIXTURES.recipes.withNuts);
-        
+
         expect(noRestrictions.containsNuts()).toBe(false);
         expect(withNuts.containsNuts()).toBe(true);
     });
 
-    it("should identify if it has eggs", function(){
+    it("should identify if it has eggs", function () {
         const noRestrictions = new app.Models.Recipe(FIXTURES.recipes.noRestrictions);
         const withEggs = new app.Models.Recipe(FIXTURES.recipes.withEggs);
 
@@ -30,11 +30,23 @@ describe("A recipe", function () {
         expect(withEggs.containsEggs()).toBe(true);
     });
 
-    it("should identify if it is vegeterian", function(){
+    it("should identify if it is vegeterian", function () {
         const noRestrictions = new app.Models.Recipe(FIXTURES.recipes.noRestrictions);
         const withMeat = new app.Models.Recipe(FIXTURES.recipes.withMeat);
 
         expect(noRestrictions.containsMeat()).toBe(false);
         expect(withMeat.containsMeat()).toBe(true);
+    });
+
+    it("should delegate to checkForIngedintType", function () {
+        var withEggsrEcipe = new app.Models.Recipe(FIXTURES.recipes.withEggs);
+
+        var mySpy = spyOn(withEggsrEcipe, 'checkForIngredientType').and.callThrough();
+        var hasEggs = withEggsrEcipe.containsEggs();
+
+        expect(mySpy).toHaveBeenCalled();
+        expect(mySpy).toHaveBeenCalledWith('isEggs');
+        expect(hasEggs).toBeTruthy();
+        expect(mySpy.calls.count()).toBe(1);
     });
 });
